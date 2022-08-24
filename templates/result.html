@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Search result</title>
+{% endblock %}
+
+{% block body %}
+<div style="text-align: center">
+    {% if results|length < 1 %}
+    <h4 style="text-align: center"> There is no results</h4>
+    {% else %}
+        {% for res in results %}
+        <div style="width: 5px; margin: 5px;">
+            <img src="{{ res['image'] }}" alt="" srcset="" width="200px">
+            <div>
+                <h4>{{ res['title'] }}</h4>
+            </div>
+        </div>
+        {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}
